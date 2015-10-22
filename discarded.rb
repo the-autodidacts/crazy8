@@ -11,7 +11,8 @@ class Discarded
   end
 
   def self.validate_play(card)
-    if card.suit == top_card.suit || card.rank == top_card.rank || top_card.rank == 8
+    top_card
+    if card.suit == @top_card.suit || card.rank == @top_card.rank || @top_card.rank == 8
       return true
     end
   end

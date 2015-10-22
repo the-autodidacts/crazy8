@@ -13,9 +13,19 @@ class Player
   end
 
   def any_play?
-    @hand.each do |card|
-      break if Discarded.validate_play() == false
-      return false
-    return true
-
+    @hand.index{ |card| Discarded.validate_play(card)}
+  end
 end
+
+
+
+
+
+
+
+# @hand.each do |card|
+#   break if Discarded.validate_play(card) == true
+#   return true
+# return false
+#   end
+# end

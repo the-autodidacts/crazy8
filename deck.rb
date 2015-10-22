@@ -14,14 +14,13 @@ class Deck
     end
   end
 
-  def shuffle(deck)
-    deck.shuffle
+  def shuffle!(deck)
+    deck.shuffle!
   end
 
   def draw(n)
     @hand = []
-    n.times {@hand<<@cards[0]}
+    n.times {@hand<<@cards.shift}
     return @hand
   end
-
 end

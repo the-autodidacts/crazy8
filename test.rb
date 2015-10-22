@@ -1,4 +1,11 @@
-require_relative 'card'
+
+class Card
+  def initialize(suit, rank)
+    @suit = suit
+    @rank = rank
+  end
+end
+
 class Deck
   SUITS = ["hearts", "spades", "diamonds", "clubs"]
   RANKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -23,5 +30,16 @@ class Deck
     n.times {@hand<<@cards[0]}
     return @hand
   end
+end
 
+
+class Player
+
+  def initialize
+    @hand = []
+  end
+
+  def draw(card)
+    @hand << card
+  end
 end
